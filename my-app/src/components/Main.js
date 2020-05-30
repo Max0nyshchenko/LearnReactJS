@@ -1,39 +1,21 @@
 import React from "react";
 import Card from "./Card";
+import Data from "./Data";
 
 function Main() {
-  const stle = {
-    color: "#333333",
-    fontWeight: "900",
-  };
-  return (
-    <main>
+  const dataw = Data.map((item) => {
+    return (
       <Card
-        contact={{
-          name: "Whiskas",
-          img: "https://source.unsplash.com/collection/190727/300x202",
-          phone: "780933388",
-          email: "som@mail.ru",
-        }}
+        key={item.id}
+        price={item.price}
+        description={item.description}
+        title={item.title}
+        other={item}
       />
-      <Card
-        contact={{
-          name: "Phiskas",
-          img: "https://source.unsplash.com/collection/190727/300x202",
-          phone: "780933388",
-          email: "som@mail.ru",
-        }}
-      />
-      <Card
-        contact={{
-          name: "Whiskas",
-          img: "https://source.unsplash.com/collection/190727/300x202",
-          phone: "780933388",
-          email: "som@mail.ru",
-        }}
-      />
-    </main>
-  );
+    );
+  });
+
+  return <main>{dataw}</main>;
 }
 
 export default Main;

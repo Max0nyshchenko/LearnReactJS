@@ -1,12 +1,22 @@
 import React from "react";
+import Data from "./Data";
 
 function Card(props) {
   return (
     <div className="card">
-      <img src={props.contact.img} />
-      <h3>{props.contact.name}</h3>
-      <p>Phone: {props.contact.phone}</p>
-      <p>email: {props.contact.email} </p>
+      <h2 className="title">{props.title}</h2>
+      <p className="desc">{props.description}</p>
+      <h3 className="price">{props.price}</h3>
+      <button
+        type="button"
+        onClick={function () {
+          const parent = this.parentElement.nodeName;
+          console.log(parent);
+        }}
+        className="btn"
+      >
+        Info
+      </button>
     </div>
   );
 }
