@@ -4,26 +4,38 @@
   padding: 0;
 }
 
-body {
-  padding: 2rem;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10rem;
+  background-color: #333;
+  color: whitesmoke;
+
+  h1 {
+    transform: translate(0, -25%);
+  }
 }
 
-.myinfo {
-  background-color: #333333;
-  padding: 1rem 2rem;
-  h1 {
-    padding: 10px;
-    background-color: black;
-    color: white;
-  }
+main {
+  padding: 3rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 
-  p {
-    padding: 10px;
-    background-color: grey;
+  .card {
+    display: grid;
+    justify-items: center;
+    gap: 0.1rem;
+    margin: 0.5rem 0;
+    padding: 5px;
   }
+}
 
-  ul {
-    padding: 3rem;
-    color: white;
-  }
+footer {
+  padding: 8px 15px;
+  background-color: #333;
+  color: #9a9ad6;
+  text-align: end;
 }
