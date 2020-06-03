@@ -20,12 +20,14 @@ class Ap extends React.Component {
 
     if (type === "checkbox") {
       checked === false
-        ? this.setState({
-            diet: [],
+        ? this.setState((prev) => {
+            return {
+              diet: prev.diet.splice(0, prev.diet.length - 1),
+            };
           })
         : this.setState((prev) => {
             return {
-              diet: prev.diet + value,
+              diet: [...prev.diet, value],
             };
           });
       console.log(this.state.diet);
@@ -34,6 +36,8 @@ class Ap extends React.Component {
         [name]: value,
       });
     }
+
+    console.log(this.state.diet);
   }
 
   render() {
@@ -125,7 +129,7 @@ class Ap extends React.Component {
           {this.state.firstName}; gender: {this.state.gender}
         </h2>
         <h2>you travelling to {this.state.travel}</h2>
-        <h2>Dietary restriction: {this.state.diet}</h2>
+        <h2>Dietary restriction: {this.state.diet.join(" ")}</h2>
       </div>
     );
   }
